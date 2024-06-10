@@ -1,0 +1,259 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A3631EC0-B015-46DE-B540-848B47F669DD}|Client\\SimpleChat.Client.csproj|c:\\users\\admin\\downloads\\blazingchat-main\\blazingchat-main\\source code by episodes\\episode_01\\blazingchat\\client\\shared\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3631EC0-B015-46DE-B540-848B47F669DD}|Client\\SimpleChat.Client.csproj|solutionrelative:client\\shared\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3631EC0-B015-46DE-B540-848B47F669DD}|Client\\SimpleChat.Client.csproj|c:\\users\\admin\\downloads\\blazingchat-main\\blazingchat-main\\source code by episodes\\episode_01\\blazingchat\\client\\shared\\loginlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3631EC0-B015-46DE-B540-848B47F669DD}|Client\\SimpleChat.Client.csproj|solutionrelative:client\\shared\\loginlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3631EC0-B015-46DE-B540-848B47F669DD}|Client\\SimpleChat.Client.csproj|c:\\users\\admin\\downloads\\blazingchat-main\\blazingchat-main\\source code by episodes\\episode_01\\blazingchat\\client\\shared\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3631EC0-B015-46DE-B540-848B47F669DD}|Client\\SimpleChat.Client.csproj|solutionrelative:client\\shared\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3631EC0-B015-46DE-B540-848B47F669DD}|Client\\SimpleChat.Client.csproj|c:\\users\\admin\\downloads\\blazingchat-main\\blazingchat-main\\source code by episodes\\episode_01\\blazingchat\\client\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3631EC0-B015-46DE-B540-848B47F669DD}|Client\\SimpleChat.Client.csproj|solutionrelative:client\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3631EC0-B015-46DE-B540-848B47F669DD}|Client\\SimpleChat.Client.csproj|c:\\users\\admin\\downloads\\blazingchat-main\\blazingchat-main\\source code by episodes\\episode_01\\blazingchat\\client\\pages\\loginpages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3631EC0-B015-46DE-B540-848B47F669DD}|Client\\SimpleChat.Client.csproj|solutionrelative:client\\pages\\loginpages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3631EC0-B015-46DE-B540-848B47F669DD}|Client\\SimpleChat.Client.csproj|c:\\users\\admin\\downloads\\blazingchat-main\\blazingchat-main\\source code by episodes\\episode_01\\blazingchat\\client\\pages\\loginpages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3631EC0-B015-46DE-B540-848B47F669DD}|Client\\SimpleChat.Client.csproj|solutionrelative:client\\pages\\loginpages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3631EC0-B015-46DE-B540-848B47F669DD}|Client\\SimpleChat.Client.csproj|c:\\users\\admin\\downloads\\blazingchat-main\\blazingchat-main\\source code by episodes\\episode_01\\blazingchat\\client\\pages\\chat.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3631EC0-B015-46DE-B540-848B47F669DD}|Client\\SimpleChat.Client.csproj|solutionrelative:client\\pages\\chat.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3631EC0-B015-46DE-B540-848B47F669DD}|Client\\SimpleChat.Client.csproj|c:\\users\\admin\\downloads\\blazingchat-main\\blazingchat-main\\source code by episodes\\episode_01\\blazingchat\\client\\pages\\contacts.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3631EC0-B015-46DE-B540-848B47F669DD}|Client\\SimpleChat.Client.csproj|solutionrelative:client\\pages\\contacts.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1740DF8C-15B9-4338-B3C0-652F3675E4A8}|Server\\SimpleChat.Server.csproj|c:\\users\\admin\\downloads\\blazingchat-main\\blazingchat-main\\source code by episodes\\episode_01\\blazingchat\\server\\db\\generate schema and data.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{1740DF8C-15B9-4338-B3C0-652F3675E4A8}|Server\\SimpleChat.Server.csproj|solutionrelative:server\\db\\generate schema and data.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1740DF8C-15B9-4338-B3C0-652F3675E4A8}|Server\\SimpleChat.Server.csproj|c:\\users\\admin\\downloads\\blazingchat-main\\blazingchat-main\\source code by episodes\\episode_01\\blazingchat\\server\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1740DF8C-15B9-4338-B3C0-652F3675E4A8}|Server\\SimpleChat.Server.csproj|solutionrelative:server\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1740DF8C-15B9-4338-B3C0-652F3675E4A8}|Server\\SimpleChat.Server.csproj|c:\\users\\admin\\downloads\\blazingchat-main\\blazingchat-main\\source code by episodes\\episode_01\\blazingchat\\server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1740DF8C-15B9-4338-B3C0-652F3675E4A8}|Server\\SimpleChat.Server.csproj|solutionrelative:server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1740DF8C-15B9-4338-B3C0-652F3675E4A8}|Server\\SimpleChat.Server.csproj|c:\\users\\admin\\downloads\\blazingchat-main\\blazingchat-main\\source code by episodes\\episode_01\\blazingchat\\server\\simplechat.server.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{1740DF8C-15B9-4338-B3C0-652F3675E4A8}|Server\\SimpleChat.Server.csproj|solutionrelative:server\\simplechat.server.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1740DF8C-15B9-4338-B3C0-652F3675E4A8}|Server\\SimpleChat.Server.csproj|c:\\users\\admin\\downloads\\blazingchat-main\\blazingchat-main\\source code by episodes\\episode_01\\blazingchat\\server\\simplechat.server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1740DF8C-15B9-4338-B3C0-652F3675E4A8}|Server\\SimpleChat.Server.csproj|solutionrelative:server\\simplechat.server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B14EF3B-BB23-4FF7-BDB6-103F87EAB844}|Shared\\SimpleChat.Shared.csproj|c:\\users\\admin\\downloads\\blazingchat-main\\blazingchat-main\\source code by episodes\\episode_01\\blazingchat\\shared\\simplechat.shared.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{1B14EF3B-BB23-4FF7-BDB6-103F87EAB844}|Shared\\SimpleChat.Shared.csproj|solutionrelative:shared\\simplechat.shared.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1740DF8C-15B9-4338-B3C0-652F3675E4A8}|Server\\SimpleChat.Server.csproj|c:\\users\\admin\\downloads\\blazingchat-main\\blazingchat-main\\source code by episodes\\episode_01\\blazingchat\\server\\db\\generate schema and data.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
+      "RelativeMoniker": "D:0:0:{1740DF8C-15B9-4338-B3C0-652F3675E4A8}|Server\\SimpleChat.Server.csproj|solutionrelative:server\\db\\generate schema and data.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Client\\Shared\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Client\\Shared\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Client\\Shared\\NavMenu.razor",
+              "RelativeToolTip": "Client\\Shared\\NavMenu.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-10T18:17:32.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginLayout.razor",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Client\\Shared\\LoginLayout.razor",
+              "RelativeDocumentMoniker": "Client\\Shared\\LoginLayout.razor",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Client\\Shared\\LoginLayout.razor",
+              "RelativeToolTip": "Client\\Shared\\LoginLayout.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-10T18:17:53.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Client\\Shared\\MainLayout.razor",
+              "RelativeDocumentMoniker": "Client\\Shared\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Client\\Shared\\MainLayout.razor",
+              "RelativeToolTip": "Client\\Shared\\MainLayout.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-10T18:17:49.55Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Register.razor",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Client\\Pages\\LoginPages\\Register.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\LoginPages\\Register.razor",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Client\\Pages\\LoginPages\\Register.razor",
+              "RelativeToolTip": "Client\\Pages\\LoginPages\\Register.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-10T18:12:10.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Client\\Pages\\LoginPages\\Login.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\LoginPages\\Login.razor",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Client\\Pages\\LoginPages\\Login.razor",
+              "RelativeToolTip": "Client\\Pages\\LoginPages\\Login.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-10T18:11:46.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Chat.razor",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Client\\Pages\\Chat.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\Chat.razor",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Client\\Pages\\Chat.razor",
+              "RelativeToolTip": "Client\\Pages\\Chat.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-10T18:11:07.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Contacts.razor",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Client\\Pages\\Contacts.razor",
+              "RelativeDocumentMoniker": "Client\\Pages\\Contacts.razor",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Client\\Pages\\Contacts.razor",
+              "RelativeToolTip": "Client\\Pages\\Contacts.razor",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAMAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-10T18:08:56.365Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Client\\App.razor",
+              "RelativeDocumentMoniker": "Client\\App.razor",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Client\\App.razor",
+              "RelativeToolTip": "Client\\App.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-10T18:08:49.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Generate Schema And Data.sql ",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Server\\DB\\Generate Schema And Data.sql",
+              "RelativeDocumentMoniker": "Server\\DB\\Generate Schema And Data.sql",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Server\\DB\\Generate Schema And Data.sql",
+              "RelativeToolTip": "Server\\DB\\Generate Schema And Data.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-06-10T18:04:12.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Server\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Server\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Server\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Server\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAJMAAAAAAAAAAAAIwA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T18:02:47.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Server\\appsettings.json",
+              "RelativeDocumentMoniker": "Server\\appsettings.json",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Server\\appsettings.json",
+              "RelativeToolTip": "Server\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-10T18:02:14.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SimpleChat.Server",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Server\\SimpleChat.Server.csproj",
+              "RelativeDocumentMoniker": "Server\\SimpleChat.Server.csproj",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Server\\SimpleChat.Server.csproj",
+              "RelativeToolTip": "Server\\SimpleChat.Server.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-10T18:01:24.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SimpleChat.Server.csproj",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Server\\SimpleChat.Server.csproj",
+              "RelativeDocumentMoniker": "Server\\SimpleChat.Server.csproj",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Server\\SimpleChat.Server.csproj",
+              "RelativeToolTip": "Server\\SimpleChat.Server.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-10T18:00:58.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SimpleChat.Shared",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Shared\\SimpleChat.Shared.csproj",
+              "RelativeDocumentMoniker": "Shared\\SimpleChat.Shared.csproj",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\BlazingChat-main\\BlazingChat-main\\Source Code By Episodes\\Episode_01\\BlazingChat\\Shared\\SimpleChat.Shared.csproj",
+              "RelativeToolTip": "Shared\\SimpleChat.Shared.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-10T18:00:40.86Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
