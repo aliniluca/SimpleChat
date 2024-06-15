@@ -3,36 +3,26 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Blazing Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>SimpleChat</title>
     <base href="/" />
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/bootstrap/bootstrap-social.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link id="theme" href="css/site0.css" rel="stylesheet" />
     <link href="manifest.json" rel="manifest" />
-    <link href="_content/BlazorPro.Spinkit/spinkit.min.css" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
 </head>
 
 <body>
-    
-    <div style="width: 100%;
-                background-color: lightgrey;">
-        <app style="width: 958px;
-                    margin-left: auto; 
-                    margin-right: auto; background-color: white;">
-                Loading...
-        </app>
-    </div>
-    
+    <app>Loading...</app>
+
     <div id="blazor-error-ui">
         An unhandled error has occurred.
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
-    <script src="js/blazing.js"></script>
-    <script src="_content/BlazorInputFile/inputfile.js"></script>
     <script>navigator.serviceWorker.register('service-worker.js');</script>
 </body>
 

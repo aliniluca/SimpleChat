@@ -1,152 +1,116 @@
-﻿using System;
+﻿using SimpleChat.Shared;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Twitter;
-using Microsoft.AspNetCore.Authentication.Google;
-using Microsoft.AspNetCore.Authentication.Facebook;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using SimpleChat.Server.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
-using SimpleChat.Server.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Twitter;
 
 namespace SimpleChat.Server.Controllers
 {
     [ApiController]
-    //[Route("[controller]")]
+    [Route("[controller]")]
     public class UserController : ControllerBase
     {
-        private readonly ILogger<UserController> _logger;
+        private static readonly string[] Summaries = new[]
+        {
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+        };
+
+        private readonly ILogger<UserController> logger;
         private readonly SimpleChatContext _context;
 
         public UserController(ILogger<UserController> logger, SimpleChatContext context)
         {
-            _logger = logger;
-            _context = context;
+            this.logger = logger;
+            this._context = context;
         }
 
-        [HttpGet("user")]
-        public async Task<User> Get()
+        [HttpGet("getcontacts")]
+        public List<User> GetContacts()
         {
-            User user = new User();
-            User returnedUser = new User();
+            return _context.Users.ToList();
+        }
+
+        //Authentication Methods
+        [HttpPost("loginuser")]
+        public async Task<ActionResult<User>> LoginUser(User user)
+        {
+            user.Password = Utility.Encrypt(user.Password);
+            User loggedInUser = await _context.Users.Where(u => u.EmailAddress == user.EmailAddress && u.Password == user.Password).FirstOrDefaultAsync();
+
+            if (loggedInUser != null)
+            {
+                //create a claim
+                var claim = new Claim(ClaimTypes.Name, loggedInUser.EmailAddress);
+                //create claimsIdentity
+                var claimsIdentity = new ClaimsIdentity(new[] { claim }, "serverAuth");
+                //create claimsPrincipal
+                var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
+                //Sign In User
+                await HttpContext.SignInAsync(claimsPrincipal);
+            }
+            return await Task.FromResult(loggedInUser);
+        }
+
+        [HttpGet("getcurrentuser")]
+        public async Task<ActionResult<User>> GetCurrentUser()
+        {
+            User currentUser = new User();
 
             if (User.Identity.IsAuthenticated)
             {
-                var emailAddress = User.FindFirstValue(ClaimTypes.Email);
-                returnedUser = _context.User.Where(u => u.EmailAddress == emailAddress)
-                                            .ToList()
-                                            .FirstOrDefault();
+                currentUser.EmailAddress = User.FindFirstValue(ClaimTypes.Name);
+                currentUser = await _context.Users.Where(u => u.EmailAddress == currentUser.EmailAddress).FirstOrDefaultAsync();
 
-                //case 1: Application User logging in
-                //case 2: Application User Registering
-                //case 3: External User Logging in 
-                if (returnedUser != null && (returnedUser.Source == "APPL" || returnedUser.Source == "EXTL"))
+                if (currentUser == null)
                 {
-                    return returnedUser;
-                }
-                //case 4: External User Registering
-                else
-                {
-                    user.EmailAddress = User.FindFirstValue(ClaimTypes.Email);
-                    user.Password = user.EmailAddress;
-                    user.Source = "EXTL";
-                    user.Notifications = 0;
-                    user.DarkTheme = 0;
-
-                    if (_context.User.Count() > 0)
-                        user.UserId = _context.User.Max(u => u.UserId) + 1;
-                    else
-                        user.UserId = 1;
-
-                    _context.User.Add(user);
-
-                    await _context.SaveChangesAsync();
-                    return user;
+                    currentUser = new User();
+                    currentUser.EmailAddress = User.FindFirstValue(ClaimTypes.Email);
+                    currentUser.UserId = 10;
                 }
             }
-            //case 5: User is not logged in
-            else
-                return returnedUser;
+
+            return await Task.FromResult(currentUser);
         }
 
-        [HttpGet("claimsprincipal")]
-        public string ClaimsPrincipal()
+        [HttpGet("logoutuser")]
+        public async Task<ActionResult<String>> LogOutUser()
         {
-            return User.FindFirstValue(ClaimTypes.Email);
-        }
+            await HttpContext.SignOutAsync();
+            return "Success";
+        }       
 
-        [HttpPost("user/register")]
-        public async Task<ActionResult<User>> RegisterUser(User user)
+        [HttpPut("updateprofile/{userId}")]
+        public async Task<User> UpdateProfile(int userId, [FromBody] User user)
         {
-            if (_context.User.Count() > 0)
-                user.UserId = _context.User.Max(u => u.UserId) + 1;
-            else
-                user.UserId = 1;
+            User userToUpdate = await _context.Users.Where(u => u.UserId == userId).FirstOrDefaultAsync();
 
-            user.Notifications = 0;
-            user.DarkTheme = 0;
-            user.Source = "APPL";
-            _context.User.Add(user);
+            userToUpdate.FirstName = user.FirstName;
+            userToUpdate.LastName = user.LastName;
+            userToUpdate.EmailAddress = user.EmailAddress;
+            userToUpdate.AboutMe = user.AboutMe;
 
             await _context.SaveChangesAsync();
-
-            var identity = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Email, user.EmailAddress) }, "serverauth");
-            var claimsPrincipal = new ClaimsPrincipal(identity);
-
-            await HttpContext.SignInAsync(claimsPrincipal);
 
             return await Task.FromResult(user);
         }
 
-        [HttpPost("user/login")]
-        public async Task<ActionResult<User>> LoginUser(User user)
+        [HttpGet("getprofile/{userId}")]
+        public async Task<User> GetProfile(int userId)
         {
-            User returnUser = _context.User.Where(u => u.EmailAddress == user.EmailAddress && u.Password == user.Password)
-                                .ToList()
-                                .FirstOrDefault();
-
-            if (returnUser != null)
-            {
-                var identity = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Email, returnUser.EmailAddress) }, "serverauth");
-                var claimsPrincipal = new ClaimsPrincipal(identity);
-
-                await HttpContext.SignInAsync(claimsPrincipal);
-            }
-
-            return returnUser;
+            return await _context.Users.Where(u => u.UserId == userId).FirstOrDefaultAsync();
         }
 
-        [HttpGet("user/getallusers")]
-        public async Task<ActionResult<List<User>>> GetAllUsers()
-        {
-            return await Task.FromResult(_context.User.ToList());
-        }
-
-
-        [HttpGet("user/getprofile/{userId}")]
-        public async Task<ActionResult<User>> GetProfile(int userId)
-        {
-            return await _context.User.Where(u => u.UserId == userId).FirstOrDefaultAsync();
-        }
-
-        [HttpPut("user/updateprofile/{userId}")]
-        public async Task<IActionResult> UpdateProfile(int userId, User user)
-        {
-            _context.Entry(user).State = EntityState.Modified;
-
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
-
-        [HttpGet("user/updatetheme")]
+        [HttpGet("updatetheme")]
         public async Task<User> UpdateTheme(string userId, string value)
         {
-            User user = _context.User.Where(u => u.UserId == Convert.ToInt32(userId)).FirstOrDefault();
+            User user = _context.Users.Where(u => u.UserId == Convert.ToInt32(userId)).FirstOrDefault();
             user.DarkTheme = value == "True" ? 1 : 0;
 
             await _context.SaveChangesAsync();
@@ -154,10 +118,10 @@ namespace SimpleChat.Server.Controllers
             return await Task.FromResult(user);
         }
 
-        [HttpGet("user/updatenotifications")]
+        [HttpGet("updatenotifications")]
         public async Task<User> UpdateNotifications(string userId, string value)
         {
-            User user = _context.User.Where(u => u.UserId == Convert.ToInt32(userId)).FirstOrDefault();
+            User user = _context.Users.Where(u => u.UserId == Convert.ToInt32(userId)).FirstOrDefault();
             user.Notifications = value == "True" ? 1 : 0;
 
             await _context.SaveChangesAsync();
@@ -165,52 +129,11 @@ namespace SimpleChat.Server.Controllers
             return await Task.FromResult(user);
         }
 
-
-        [HttpGet("user/twittersignin")]
-        public async Task TwitterSignIn(string redirectUri)
+        [HttpGet("TwitterSignIn")]
+        public async Task TwitterSignIn()
         {
-            if (string.IsNullOrEmpty(redirectUri) || !Url.IsLocalUrl(redirectUri))
-            {
-                redirectUri = "/";
-            }
-
-            await HttpContext.ChallengeAsync(
-                TwitterDefaults.AuthenticationScheme,
-                new AuthenticationProperties { RedirectUri = redirectUri });
-        }
-
-        [HttpGet("user/googlesignin")]
-        public async Task GoogleSignIn(string redirectUri)
-        {
-            if (string.IsNullOrEmpty(redirectUri) || !Url.IsLocalUrl(redirectUri))
-            {
-                redirectUri = "/";
-            }
-
-            await HttpContext.ChallengeAsync(
-                GoogleDefaults.AuthenticationScheme,
-                new AuthenticationProperties { RedirectUri = redirectUri });
-        }
-
-        [HttpGet("user/facebooksignin")]
-        public async Task FacebookSignIn(string redirectUri)
-        {
-            if (string.IsNullOrEmpty(redirectUri) || !Url.IsLocalUrl(redirectUri))
-            {
-                redirectUri = "/";
-            }
-
-            await HttpContext.ChallengeAsync(
-                FacebookDefaults.AuthenticationScheme,
-                new AuthenticationProperties { RedirectUri = redirectUri });
-        }
-
-
-        [HttpGet("user/signout")]
-        public async Task<IActionResult> SignOut()
-        {
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return Redirect("~/");
+            await HttpContext.ChallengeAsync(TwitterDefaults.AuthenticationScheme, 
+                new AuthenticationProperties { RedirectUri = "/profile" });
         }
     }
 }

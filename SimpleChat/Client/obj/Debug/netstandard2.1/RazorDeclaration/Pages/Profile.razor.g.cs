@@ -13,80 +13,80 @@ namespace SimpleChat.Client.Pages
     using global::System.Threading.Tasks;
     using global::Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\_Imports.razor"
+#line 1 "C:\Users\Admin\source\repos\BlazingChat-main\BlazingChat-main\Source Code By Episodes\SimpleChat_01\SimpleChat\Client\_Imports.razor"
 using System.Net.Http
 
 #nullable disable
     ;
 #nullable restore
-#line 2 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\_Imports.razor"
-using Microsoft.AspNetCore.Components.Forms
-
-#nullable disable
-    ;
-#nullable restore
-#line 3 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\_Imports.razor"
-using Microsoft.AspNetCore.Components.Routing
-
-#nullable disable
-    ;
-#nullable restore
-#line 4 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\_Imports.razor"
-using Microsoft.AspNetCore.Components.Web
-
-#nullable disable
-    ;
-#nullable restore
-#line 5 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\_Imports.razor"
-using Microsoft.JSInterop
-
-#nullable disable
-    ;
-#nullable restore
-#line 6 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\_Imports.razor"
-using SimpleChat.Client
-
-#nullable disable
-    ;
-#nullable restore
-#line 7 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\_Imports.razor"
-using SimpleChat.Client.Shared
-
-#nullable disable
-    ;
-#nullable restore
-#line 8 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\_Imports.razor"
-using BlazorPro.Spinkit
-
-#nullable disable
-    ;
-#nullable restore
-#line 9 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\_Imports.razor"
+#line 2 "C:\Users\Admin\source\repos\BlazingChat-main\BlazingChat-main\Source Code By Episodes\SimpleChat_01\SimpleChat\Client\_Imports.razor"
 using System.Net.Http.Json
 
 #nullable disable
     ;
 #nullable restore
-#line 10 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\_Imports.razor"
-using System.IO
+#line 3 "C:\Users\Admin\source\repos\BlazingChat-main\BlazingChat-main\Source Code By Episodes\SimpleChat_01\SimpleChat\Client\_Imports.razor"
+using Microsoft.AspNetCore.Components.Forms
 
 #nullable disable
     ;
 #nullable restore
-#line 11 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\_Imports.razor"
-using BlazorInputFile
+#line 4 "C:\Users\Admin\source\repos\BlazingChat-main\BlazingChat-main\Source Code By Episodes\SimpleChat_01\SimpleChat\Client\_Imports.razor"
+using Microsoft.AspNetCore.Components.Routing
 
 #nullable disable
     ;
 #nullable restore
-#line 2 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\Pages\Profile.razor"
- using SimpleChat.Shared.ViewModels
+#line 5 "C:\Users\Admin\source\repos\BlazingChat-main\BlazingChat-main\Source Code By Episodes\SimpleChat_01\SimpleChat\Client\_Imports.razor"
+using Microsoft.AspNetCore.Components.Web
 
 #nullable disable
     ;
 #nullable restore
-#line 3 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\Pages\Profile.razor"
+#line 6 "C:\Users\Admin\source\repos\BlazingChat-main\BlazingChat-main\Source Code By Episodes\SimpleChat_01\SimpleChat\Client\_Imports.razor"
+using Microsoft.AspNetCore.Components.WebAssembly.Http
+
+#nullable disable
+    ;
+#nullable restore
+#line 7 "C:\Users\Admin\source\repos\BlazingChat-main\BlazingChat-main\Source Code By Episodes\SimpleChat_01\SimpleChat\Client\_Imports.razor"
+using Microsoft.JSInterop
+
+#nullable disable
+    ;
+#nullable restore
+#line 8 "C:\Users\Admin\source\repos\BlazingChat-main\BlazingChat-main\Source Code By Episodes\SimpleChat_01\SimpleChat\Client\_Imports.razor"
+using SimpleChat.Client
+
+#nullable disable
+    ;
+#nullable restore
+#line 9 "C:\Users\Admin\source\repos\BlazingChat-main\BlazingChat-main\Source Code By Episodes\SimpleChat_01\SimpleChat\Client\_Imports.razor"
+using SimpleChat.Client.Shared
+
+#nullable disable
+    ;
+#nullable restore
+#line 10 "C:\Users\Admin\source\repos\BlazingChat-main\BlazingChat-main\Source Code By Episodes\SimpleChat_01\SimpleChat\Client\_Imports.razor"
+using Microsoft.AspNetCore.Components.Authorization
+
+#nullable disable
+    ;
+#nullable restore
+#line 2 "C:\Users\Admin\source\repos\BlazingChat-main\BlazingChat-main\Source Code By Episodes\SimpleChat_01\SimpleChat\Client\Pages\Profile.razor"
+ using SimpleChat.ViewModels
+
+#nullable disable
+    ;
+#nullable restore
+#line 3 "C:\Users\Admin\source\repos\BlazingChat-main\BlazingChat-main\Source Code By Episodes\SimpleChat_01\SimpleChat\Client\Pages\Profile.razor"
  using SimpleChat.Shared.Models
+
+#nullable disable
+    ;
+#nullable restore
+#line 4 "C:\Users\Admin\source\repos\BlazingChat-main\BlazingChat-main\Source Code By Episodes\SimpleChat_01\SimpleChat\Client\Pages\Profile.razor"
+ using System.Security.Claims
 
 #line default
 #line hidden
@@ -95,7 +95,7 @@ using BlazorInputFile
     [global::Microsoft.AspNetCore.Components.RouteAttribute(
     // language=Route,Component
 #nullable restore
-#line 1 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\Pages\Profile.razor"
+#line 1 "C:\Users\Admin\source\repos\BlazingChat-main\BlazingChat-main\Source Code By Episodes\SimpleChat_01\SimpleChat\Client\Pages\Profile.razor"
       "/profile"
 
 #line default
@@ -112,48 +112,28 @@ using BlazorInputFile
         }
         #pragma warning restore 1998
 #nullable restore
-#line 52 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\Pages\Profile.razor"
+#line 25 "C:\Users\Admin\source\repos\BlazingChat-main\BlazingChat-main\Source Code By Episodes\SimpleChat_01\SimpleChat\Client\Pages\Profile.razor"
        
-    private ProfileViewModel _profileViewModel = new ProfileViewModel();
-    string status;
-    string imageDataUri;
 
-    protected override async Task OnInitializedAsync()
+    [CascadingParameter]
+    public Task<AuthenticationState> authenticationState { get; set; }
+
+    protected override async Task OnInitializedAsync() 
     {
-        var userId = await LocalStorageService.GetItemAsync<long>("userId");
+        var authState = await authenticationState;//_authenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
 
-        if (userId > 0)
+        if(user.Identity.IsAuthenticated)
         {
-            User user = await HttpClient.GetFromJsonAsync<User>("user/getprofile/" + userId);            
-            await JSRuntime.InvokeVoidAsync("setTheme", "site" + user.DarkTheme);
-            _profileViewModel = user;
+            var claim = user.FindFirst(c => c.Type == ClaimTypes.NameIdentifier);
+            _profileViewModel.UserId = Convert.ToInt64(claim?.Value) ;
+            await _profileViewModel.GetProfile();
         }
-    }
-
-    private async Task SubmitForm()
-    {
-        User user = _profileViewModel;
-
-        await HttpClient.PutAsJsonAsync("user/updateprofile/" + user.UserId, user);
-    }
-
-    private async Task HandleSelection(IFileListEntry[] files)
-    {
-        var rawFile = files.FirstOrDefault();
-        if (rawFile != null)
+        else
         {
-            // Load as an image file in memory
-            var format = "image/jpeg";
-            //var imageFile = await rawFile.ToImageFileAsync(format, 640, 480);
-            var imageFile = await rawFile.ToImageFileAsync(format, 368, 368);
-            var ms = new MemoryStream();
-            await imageFile.Data.CopyToAsync(ms);
-
-            // Make a data URL so we can display it
-            imageDataUri = $"data:{format};base64,{Convert.ToBase64String(ms.ToArray())}";
-
-            status = $"Finished loading {ms.Length} bytes from {imageFile.Name}";
+            _navigationManager.NavigateTo("/");
         }
+        
     }
 
 #line default
@@ -162,16 +142,16 @@ using BlazorInputFile
 
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private 
 #nullable restore
-#line 6 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\Pages\Profile.razor"
-        IJSRuntime
+#line 6 "C:\Users\Admin\source\repos\BlazingChat-main\BlazingChat-main\Source Code By Episodes\SimpleChat_01\SimpleChat\Client\Pages\Profile.razor"
+        NavigationManager
 
 #line default
 #line hidden
 #nullable disable
          
 #nullable restore
-#line 6 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\Pages\Profile.razor"
-                   JSRuntime
+#line 6 "C:\Users\Admin\source\repos\BlazingChat-main\BlazingChat-main\Source Code By Episodes\SimpleChat_01\SimpleChat\Client\Pages\Profile.razor"
+                          _navigationManager
 
 #line default
 #line hidden
@@ -180,34 +160,16 @@ using BlazorInputFile
          = default!;
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private 
 #nullable restore
-#line 5 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\Pages\Profile.razor"
-        Blazored.LocalStorage.ILocalStorageService
+#line 5 "C:\Users\Admin\source\repos\BlazingChat-main\BlazingChat-main\Source Code By Episodes\SimpleChat_01\SimpleChat\Client\Pages\Profile.razor"
+        IProfileViewModel
 
 #line default
 #line hidden
 #nullable disable
          
 #nullable restore
-#line 5 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\Pages\Profile.razor"
-                                                   LocalStorageService
-
-#line default
-#line hidden
-#nullable disable
-         { get; set; }
-         = default!;
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private 
-#nullable restore
-#line 4 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\Pages\Profile.razor"
-        HttpClient
-
-#line default
-#line hidden
-#nullable disable
-         
-#nullable restore
-#line 4 "C:\Users\Admin\Downloads\BlazingChat-main\BlazingChat-main\Source Code By Episodes\Episode_01\BlazingChat\Client\Pages\Profile.razor"
-                   HttpClient
+#line 5 "C:\Users\Admin\source\repos\BlazingChat-main\BlazingChat-main\Source Code By Episodes\SimpleChat_01\SimpleChat\Client\Pages\Profile.razor"
+                          _profileViewModel
 
 #line default
 #line hidden

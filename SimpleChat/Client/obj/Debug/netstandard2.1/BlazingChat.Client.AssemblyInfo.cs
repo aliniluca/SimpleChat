@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlazingChat.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf5f8095c509df736a269f505eb842039d0e0278")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlazingChat.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlazingChat.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

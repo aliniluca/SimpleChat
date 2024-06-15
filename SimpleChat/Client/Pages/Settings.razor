@@ -1,50 +1,43 @@
-@page "/settings"
-@using SimpleChat.Shared.ViewModels
-@using SimpleChat.Shared.Models
-@inject HttpClient HttpClient
-@inject Blazored.LocalStorage.ILocalStorageService LocalStorageService
-@inject IJSRuntime JSRuntime
+﻿@page "/settings"
+@using SimpleChat.ViewModels
+@using System.Security.Claims
+@inject ISettingsViewModel _settingsViewModel
+@inject NavigationManager _navigationManager
 
 <h2><b>Settings</b></h2> 
 <hr />
 
-<EditForm Model="@_settingsViewModel">
-    
-    <div class="col-12">
-        <input type="checkbox" checked="@_settingsViewModel.Notifications" id="chkNotification" @onchange="@(e => UpdateNotifications(e))">
-        <label> Notification </label>
-        <br>
+<div class="col-12">
+    <input type="checkbox" @bind="@_settingsViewModel.Notifications" id="chkNotification">
+    <label> Notification </label>    
+    <br>   
 
-        <input type="checkbox" checked="@_settingsViewModel.DarkTheme" id="chkDarkTheme" @onchange="@(e => UpdateTheme(e))">
-        <label> Dark Theme </label>
-        <br>
-    </div>
-
-</EditForm>
+    <input type="checkbox" @bind="@_settingsViewModel.DarkTheme" id="chkDarkTheme">
+    <label> Dark Theme </label>    
+    <br>
+</div>
+<div class="col-12">
+    <button class="btn btn-primary" @onclick="_settingsViewModel.Save">Save</button>
+</div>
 
 @code {
-    private SettingsViewModel _settingsViewModel = new SettingsViewModel();
-    long UserId;
 
-    protected override async Task OnInitializedAsync()
+    [CascadingParameter]
+    public Task<AuthenticationState> authenticationState { get; set; }
+    protected override async Task OnInitializedAsync() 
     {
-        UserId = await LocalStorageService.GetItemAsync<long>("userId");
-        User user = await HttpClient.GetFromJsonAsync<User>("user/getprofile/" + UserId);
+        var authState = await authenticationState;//_authenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
 
-        _settingsViewModel = user;
-    }
-
-    private async Task UpdateTheme(ChangeEventArgs changeEventArgs)
-    {
-        User user = await HttpClient.GetFromJsonAsync<User>($"user/updatetheme?userId={UserId}&value={changeEventArgs.Value.ToString()}");
-        
-        await JSRuntime.InvokeVoidAsync("setTheme", "site" + user.DarkTheme);
-    }
-
-    private async Task UpdateNotifications(ChangeEventArgs changeEventArgs)
-    {
-        object obj = await HttpClient.GetFromJsonAsync<object>($"user/updatenotifications?userId={UserId}&value={changeEventArgs.Value.ToString()}");
-        
-    }
-
+        if(user.Identity.IsAuthenticated)
+        {
+            var claim = user.FindFirst(c => c.Type == ClaimTypes.NameIdentifier);
+            _settingsViewModel.UserId = Convert.ToInt64(claim?.Value);
+            await _settingsViewModel.GetProfile();
+        }
+        else
+        {
+            _navigationManager.NavigateTo("/");
+        }
+    } 
 }

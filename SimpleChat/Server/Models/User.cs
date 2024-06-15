@@ -7,9 +7,8 @@ namespace SimpleChat.Server.Models
     {
         public User()
         {
-            ChatHistoryFromUser = new HashSet<ChatHistory>();
-            ChatHistoryToUser = new HashSet<ChatHistory>();
-            RefreshToken = new HashSet<RefreshToken>();
+            ChatHistoryFromUsers = new HashSet<ChatHistory>();
+            ChatHistoryToUsers = new HashSet<ChatHistory>();
         }
 
         public long UserId { get; set; }
@@ -25,8 +24,7 @@ namespace SimpleChat.Server.Models
         public long? DarkTheme { get; set; }
         public byte[] CreatedDate { get; set; }
 
-        public virtual ICollection<ChatHistory> ChatHistoryFromUser { get; set; }
-        public virtual ICollection<ChatHistory> ChatHistoryToUser { get; set; }
-        public virtual ICollection<RefreshToken> RefreshToken { get; set; }
+        public virtual ICollection<ChatHistory> ChatHistoryFromUsers { get; set; }
+        public virtual ICollection<ChatHistory> ChatHistoryToUsers { get; set; }
     }
 }

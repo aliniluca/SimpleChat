@@ -1,94 +1,47 @@
-@page "/profile"
-@using SimpleChat.Shared.ViewModels
+﻿@page "/profile"
+@using SimpleChat.ViewModels
 @using SimpleChat.Shared.Models
-@inject HttpClient HttpClient
-@inject Blazored.LocalStorage.ILocalStorageService LocalStorageService
-@inject IJSRuntime JSRuntime
-
+@using System.Security.Claims
+@inject IProfileViewModel _profileViewModel
+@inject NavigationManager _navigationManager
 
 <h2><b>Profile</b></h2> 
 <hr />
 
-<EditForm Model="_profileViewModel" OnValidSubmit="SubmitForm">
-    <div class="col-12 row">
+<div class="col-8">
+    <input type="text" @bind-value="_profileViewModel.FirstName" class="form-control" placeholder="first name">
+    <br/>
+    <input type="text" @bind-value="_profileViewModel.LastName" class="form-control" placeholder="last name">
+    <br/>
+    <input type="text" @bind-value="_profileViewModel.EmailAddress" class="form-control" placeholder="email address">
+    <br/>
+    <textarea class="form-control" @bind="_profileViewModel.AboutMe" placeholder="about me"></textarea>
+    <br/>
+    <button class="btn btn-primary" @onclick="_profileViewModel.UpdateProfile">Update Profile</button>
+    <span>&nbsp;&nbsp;</span>@_profileViewModel.Message
+</div>
 
-        <div class="col-6">
-            @if (!string.IsNullOrEmpty(imageDataUri))
-            {
-                <img src="@imageDataUri" />
-            }
-            else
-            {
-                <img src="img/blank-profile.png">
-            }            
-            <br />
-            
-        </div>
-
-        <div class="col-6">
-            <DataAnnotationsValidator />
-
-            <input class="form-control" @bind="_profileViewModel.FirstName" placeholder="first name">
-            <ValidationMessage For="@(() => _profileViewModel.FirstName)" />
-            <br/>
-            <input class="form-control" @bind="_profileViewModel.LastName" placeholder="last name">
-            <ValidationMessage For="@(() => _profileViewModel.LastName)" />
-            <br/>
-            <input class="form-control" @bind="_profileViewModel.EmailAddress" placeholder="email address">
-            <ValidationMessage For="@(() => _profileViewModel.EmailAddress)" />
-            <br/>
-            <InputDate class="form-control default-date-picker" @bind-Value="_profileViewModel.DateOfBirth" placeholder="date of birth"></InputDate>            
-            <br/>    
-            <textarea class="form-control" @bind="_profileViewModel.AboutMe" placeholder="about me"></textarea>
-            <ValidationMessage For="@(() => _profileViewModel.AboutMe)" />
-            <br/>
-            <button class="btn btn-primary">Save</button>
-        </div>
-    </div>
-</EditForm>
-
-<br />
 
 @code {
-    private ProfileViewModel _profileViewModel = new ProfileViewModel();
-    string status;
-    string imageDataUri;
 
-    protected override async Task OnInitializedAsync()
+    [CascadingParameter]
+    public Task<AuthenticationState> authenticationState { get; set; }
+
+    protected override async Task OnInitializedAsync() 
     {
-        var userId = await LocalStorageService.GetItemAsync<long>("userId");
+        var authState = await authenticationState;//_authenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
 
-        if (userId > 0)
+        if(user.Identity.IsAuthenticated)
         {
-            User user = await HttpClient.GetFromJsonAsync<User>("user/getprofile/" + userId);            
-            await JSRuntime.InvokeVoidAsync("setTheme", "site" + user.DarkTheme);
-            _profileViewModel = user;
+            var claim = user.FindFirst(c => c.Type == ClaimTypes.NameIdentifier);
+            _profileViewModel.UserId = Convert.ToInt64(claim?.Value) ;
+            await _profileViewModel.GetProfile();
         }
-    }
-
-    private async Task SubmitForm()
-    {
-        User user = _profileViewModel;
-
-        await HttpClient.PutAsJsonAsync("user/updateprofile/" + user.UserId, user);
-    }
-
-    private async Task HandleSelection(IFileListEntry[] files)
-    {
-        var rawFile = files.FirstOrDefault();
-        if (rawFile != null)
+        else
         {
-            // Load as an image file in memory
-            var format = "image/jpeg";
-            //var imageFile = await rawFile.ToImageFileAsync(format, 640, 480);
-            var imageFile = await rawFile.ToImageFileAsync(format, 368, 368);
-            var ms = new MemoryStream();
-            await imageFile.Data.CopyToAsync(ms);
-
-            // Make a data URL so we can display it
-            imageDataUri = $"data:{format};base64,{Convert.ToBase64String(ms.ToArray())}";
-
-            status = $"Finished loading {ms.Length} bytes from {imageFile.Name}";
+            _navigationManager.NavigateTo("/");
         }
+        
     }
 }

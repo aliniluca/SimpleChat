@@ -1,62 +1,42 @@
+using System;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Blazored.LocalStorage;
+using SimpleChat.Shared.Models;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
-using SimpleChat.Shared.Models;
 
 namespace SimpleChat.Client
 {
     public class CustomAuthenticationStateProvider : AuthenticationStateProvider
     {
-        private readonly HttpClient _httpClient;
-        private readonly ILocalStorageService _localStorageService;
 
-        public CustomAuthenticationStateProvider(HttpClient httpClient, ILocalStorageService localStorageService)
+        private readonly HttpClient _httpClient;
+
+        public CustomAuthenticationStateProvider(HttpClient httpClient)
         {
             _httpClient = httpClient;
-            _localStorageService = localStorageService;
         }
 
-        public override async Task<AuthenticationState> GetAuthenticationStateAsync()
+        public async override Task<AuthenticationState> GetAuthenticationStateAsync()
         {
-            var user = await _httpClient.GetFromJsonAsync<User>("user");
+            User currentUser = await _httpClient.GetFromJsonAsync<User>("user/getcurrentuser");
 
-            var IsAuthenticated = false;
+            if (currentUser != null && currentUser.EmailAddress != null)
+            { 
+                 //create a claims
+                var claimEmailAddress = new Claim(ClaimTypes.Name, currentUser.EmailAddress);
+                var claimNameIdentifier = new Claim(ClaimTypes.NameIdentifier, Convert.ToString(currentUser.UserId));
+                //create claimsIdentity
+                var claimsIdentity = new ClaimsIdentity(new[] { claimEmailAddress, claimNameIdentifier }, "serverAuth");
+                //create claimsPrincipal
+                var claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
 
-            if (user != null && user.EmailAddress != null)
-            {
-                IsAuthenticated = true;
-                await _localStorageService.SetItemAsync("userId", user.UserId);
+                return new AuthenticationState(claimsPrincipal);
             }
-
-            var identity = IsAuthenticated
-                 ? new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, user.EmailAddress) }, "serverauth")
-                 : new ClaimsIdentity();
-
-            return new AuthenticationState(new ClaimsPrincipal(identity));
-        }
-
-        public async Task MarkUserAsLoggedIn(User user)
-        {
-            var identity = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, user.EmailAddress) }, "serverauth");
-
-            var claimsPrincipal = new ClaimsPrincipal(identity);
-
-            await _localStorageService.SetItemAsync("userId", user.UserId);
-            NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(claimsPrincipal)));
-        }
-
-        public async Task MarkUserAsLoggedOut()
-        {
-            var identity = new ClaimsIdentity();
-
-            var claimsPrincipal = new ClaimsPrincipal(identity);
-
-            await _localStorageService.RemoveItemAsync("userId");
-            NotifyAuthenticationStateChanged(Task.FromResult(new AuthenticationState(claimsPrincipal)));
+            else
+                return new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()));
         }
     }
-}
+} 

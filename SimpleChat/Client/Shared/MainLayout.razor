@@ -1,21 +1,27 @@
 ﻿@inherits LayoutComponentBase
-@using Microsoft.AspNetCore.Components.Authorization
-@inject NavigationManager NavigationManager
+@inject NavigationManager _navigationManager
+@inject HttpClient _httpClient
 
 <div class="sidebar">
     <NavMenu />
 </div>
 
 <div class="main">
-    <div class="top-row">
-        <div>
-            <AuthorizeView>
-                <Authorized>
-                        <h4>Welcome, <b>@context.User.Identity.Name</b></h4>                
-                    </Authorized>            
-            </AuthorizeView>
-        </div>
-    </div>
+    
+    <AuthorizeView>
+        <Authorized>
+            <div class="top-row px-4">
+                <h4><b>Hello, @context.User.Identity.Name</b></h4> &nbsp;
+                <button class="btn btn-danger" @onclick="LogoutUser">Logout</button>
+            </div>
+        </Authorized>
+        <NotAuthorized>
+            <div class="top-row px-4">
+                <button class="btn btn-primary" @onclick="LoginUser">Login</button>
+            </div>
+        </NotAuthorized>
+    </AuthorizeView>  
+    
 
     <div class="content px-4">
         @Body
@@ -23,9 +29,16 @@
 </div>
 
 @code{
-    private void Logout()
+
+    private async Task LogoutUser()
     {
-        NavigationManager.NavigateTo("user/signout", true);
+        await _httpClient.GetAsync("user/logoutuser");
+        _navigationManager.NavigateTo("/", true);
+    }
+
+    private void LoginUser()
+    {
+        _navigationManager.NavigateTo("/", true);
     }
 
 }
